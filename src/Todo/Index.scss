@@ -1,0 +1,22 @@
+.todo {
+
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 750px;
+  height: 500px;
+
+  transform: translate(-50%, -50%);
+
+  border: 2px solid #f500cc;
+  border-radius: 10px;
+  background-color: rgba(38, 46, 47, 0.92);
+
+
+  &__sideBar {
+    color: #ffff;
+    height: 100%;
+    width: 200px;
+    border-right: 2px solid #f500cc;
+  }
+}

@@ -1,0 +1,57 @@
+body {
+    background: url("img/red.jpg") no-repeat;
+    background-size: cover;
+
+}
+
+
+
+/*______________header______________*/
+
+.header{
+display: flex;
+    flex-direction: column;
+    justify-content: start;
+}
+
+.tutu{
+    width: 80px;
+}
+.img{
+    width: 100%;
+max-width: 150px;
+
+}
+.header_inner{
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid #515369;
+    padding: 15px;
+}
+
+/*___________________*container*___________________________*/
+
+.container{
+    background-color: rgba(81, 83, 105, 0.47);
+    width: 100%;
+    max-width: 1920px;
+    margin: 0   auto;
+}
+
+/*-------------nav---------------*/
+.nav{
+    font-size: 13px;
+    font-weight: 700;
+    padding: 35px 0;
+}
+.nav__link{
+    margin-left: 35px;
+    color: white;
+    text-decoration: none;
+}
+.nav__link:hover{
+    opacity: 1;
+}
+.nav__link:first-child {
+    margin: 0;
+}
