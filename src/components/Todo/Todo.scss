@@ -1,5 +1,5 @@
 .todo {
-
+  background-color: #f500cc;
   position: absolute;
   left: 50%;
   top: 50%;
@@ -8,15 +8,22 @@
 
   transform: translate(-50%, -50%);
 
-  border: 2px solid #f500cc;
+  border: 2px solid rgba(245, 0, 204, 0.64);
   border-radius: 10px;
   background-color: rgba(38, 46, 47, 0.92);
-
+  box-shadow: 1px 1px 15px #625169;
+  font-size: 14px;
 
   &__sideBar {
+    display: flex;
+    flex-direction: column;
+
     color: #ffff;
     height: 100%;
     width: 200px;
+    box-sizing: border-box;
     border-right: 2px solid #f500cc;
+    padding: 50px 20px;
   }
 }
+
