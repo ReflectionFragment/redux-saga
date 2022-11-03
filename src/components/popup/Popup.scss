@@ -1,0 +1,13 @@
+.addList {
+  &__pop {
+    position: absolute;
+    width: 250px;
+    height: 150px;
+    box-shadow: 1px 1px 10px #db9fe7;
+    background-color: #db9fe7;
+    border-radius: 10px;
+    img {
+      height: 35px;
+    }
+  }
+}

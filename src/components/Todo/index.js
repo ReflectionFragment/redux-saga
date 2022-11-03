@@ -1,8 +1,8 @@
 import React from "react";
 import all from '../../assets/icons/all.svg'
-import plus from '../../assets/icons/plus.svg'
 import List from "../List";
 import './Todo.scss';
+import Popup from "../popup";
 
 const Todo = () => {
     return (
@@ -22,7 +22,7 @@ const Todo = () => {
                         {
                             color: 'green' ,
                             name: "11234!",
-                            active: true
+                            active: 1
                         },
                         {
                             color: 'pink',
@@ -32,17 +32,12 @@ const Todo = () => {
                             color: 'blue' ,
                             name: "112345!"
                         }
-                    ]}
+
+                    ]
+                }
+                    isRemovable
                 />
-                <List
-                    items = {[
-                        {
-                            className: 'list__add-button',
-                            icon: plus,
-                            name: "Добавить!",
-                            active: true
-                        }
-                    ]} />
+                <Popup/>
 
             </div>
 
