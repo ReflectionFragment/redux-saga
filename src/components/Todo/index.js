@@ -1,8 +1,10 @@
 import React from "react";
-import all from '../../assets/icons/all.svg'
 import List from "../List";
 import './Todo.scss';
 import Popup from "../popup";
+
+import all from '../../assets/icons/all.svg'
+import DB from '../../assets/DB.json'
 
 const Todo = () => {
     return (
@@ -37,7 +39,7 @@ const Todo = () => {
                 }
                     isRemovable
                 />
-                <Popup/>
+                <Popup colors = {DB.colors} />
 
             </div>
 

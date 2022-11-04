@@ -1,13 +1,53 @@
 .addList {
   &__pop {
-    position: absolute;
+    position: relative;
     width: 250px;
     height: 150px;
     box-shadow: 1px 1px 10px #db9fe7;
     background-color: #db9fe7;
     border-radius: 10px;
+
+
     img {
+      position: absolute;
       height: 35px;
     }
+
+    .field {
+      width: 100%;
+      margin-top: 10px;
+    padding: 5px 10px;
+      border-radius: 5px;
+      background-color: rgba(255, 255, 255, 0.76);
+      border: 1px solid  #c800ff;
+      box-sizing: border-box;
+
+
+
+    &:focus {
+      background-color: #ffffff;
+      border-color: #ff006a
+    }}
+
+    .list__add-button{
+      width: 100%;
+      padding: 5px;
+      margin-top: 10px;
+      border-radius: 5px;
+      border-color: #79009f;
+      background: #c800ff;
+      color: #579f00;
+    }
+
+    .btn:hover {
+      background: darken(#C800FFFF, 5%);
+    }
+
+    .btn:active {
+      background: darken(#C800FFFF, 10%);
+    }
+  }
+  &__colors{
+    position: static;
   }
 }

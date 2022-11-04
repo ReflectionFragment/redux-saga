@@ -1,19 +1,23 @@
-.todo{
-display: flex;
-&__tasks{
+.todo {
   display: flex;
-}
+
+  &__tasks {
+    display: flex;
+  }
 }
 
 .list {
   margin-bottom: 30px;
+
   &__add-button {
     color: chartreuse;
     opacity: 0.4;
+
     &:hover {
       opacity: 1;
     }
-    :checked{
+
+    :checked {
     }
   }
 
@@ -31,11 +35,10 @@ display: flex;
       border-radius: 4px;
     }
 
-
-
     i {
       display: inline-flex;
       margin-right: 0;
+
       img {
         opacity: 69%;
         width: 40px;
@@ -45,26 +48,8 @@ display: flex;
         opacity: 1;
       }
     }
-    .badge {
-
-      width: 15px;
-      height: 15px;
-      border-radius: 15px;
-      position: relative;
-      margin-right: 20px;
-      left: 10px;
-
-      &--green {
-        background-color: #7cad68;
-      }
-      &--blue {
-        background-color: rgba(28, 114, 224, 0.94);
-      }
-      &--pink {
-        background-color: rgb(252, 138, 210);
-      }
-    }
   }
+
   span {
     margin-left: 0;
   }
