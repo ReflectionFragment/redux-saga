@@ -8,7 +8,9 @@ import plus from "../../assets/icons/plus.svg";
 
 const Popup = ({colors}) => {
     const [visible, setVisible] = React.useState(false);
-    const op = () => setVisible(false);
+    const [selectColor, setColor] = React.useState(colors[0].id);
+
+    console.log(selectColor)
 
     return (
         <div className='addList'>
@@ -29,13 +31,18 @@ const Popup = ({colors}) => {
 
                 <input className='field' value='pop' type="text"/>
 
-                    <button className='list__add-button'>
-                        <p>added</p>
-                    </button>
-                    <div className='addList__colors' >
-                        { colors.map((color, index)=> (<Badge key={index} color={color.name}/>)) }
-                    </div>
-                <img onClick={op} src={close} alt='x'/>
+                <button className='list__add-button'>
+                    <span className='test'>Add+</span>
+                </button>
+                <div className='addList__colors'>
+                    {colors.map((color, index) => (
+                        <Badge onClick={() => setColor(color.id)}
+                               key={index}
+                               color={color.name}
+                               className={selectColor===color.id && 'active'}              />
+                    ))}
+                </div>
+                <img className='close' onClick={()=>setVisible(false)} src={close} alt='x'/>
             </div>}
         </div>
     )

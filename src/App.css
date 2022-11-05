@@ -1,6 +1,7 @@
 body {
     background: url("assets/img/blue.jpg") no-repeat;
     background-size: cover;
+
 }
 body:hover {
     background: url("assets/img/red.jpg") no-repeat;
@@ -16,7 +17,6 @@ body {
 .header{
 display: flex;
     flex-direction: column;
-    justify-content: start;
 }
 
 .tutu{

@@ -6,48 +6,65 @@
     box-shadow: 1px 1px 10px #db9fe7;
     background-color: #db9fe7;
     border-radius: 10px;
+    padding: 5px;
 
-
-    img {
+    .close {
       position: absolute;
+      box-sizing: border-box;
+      right: -15px;
+      top: -15px;
       height: 35px;
+      border-radius: 20px;
+      &:hover{
+        background: rgba(219, 159, 231, 0.24);
+      }
     }
 
     .field {
       width: 100%;
       margin-top: 10px;
-    padding: 5px 10px;
+      padding: 5px 10px;
       border-radius: 5px;
       background-color: rgba(255, 255, 255, 0.76);
-      border: 1px solid  #c800ff;
+      border: 1px solid #c800ff;
       box-sizing: border-box;
 
 
+      &:focus {
+        background-color: #ffffff;
+        border-color: #ff006a
+      }
+    }
 
-    &:focus {
-      background-color: #ffffff;
-      border-color: #ff006a
-    }}
-
-    .list__add-button{
+    .list__add-button {
       width: 100%;
       padding: 5px;
       margin-top: 10px;
       border-radius: 5px;
       border-color: #79009f;
       background: #c800ff;
-      color: #579f00;
+
+      .test {
+        font-size: large;
+        color: white;
+      }
     }
 
-    .btn:hover {
-      background: darken(#C800FFFF, 5%);
+
+  }
+
+  &__colors {
+    display: flex;
+    justify-content: space-between;
+
+    .badge {
+      border: 2px solid rgba(81, 83, 105, 0);
+      margin: 5px 0;
+      &.active{
+        border: 10px solid #da9ee6;
+      }
     }
 
-    .btn:active {
-      background: darken(#C800FFFF, 10%);
-    }
   }
-  &__colors{
-    position: static;
-  }
+
 }

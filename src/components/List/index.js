@@ -4,6 +4,7 @@ import Badge from "../Badge";
 import classname from "classname";
 
 function List({ items, isRemovable, onClick }) {
+
     return (
         <ul onClick={onClick} className='list'>
             {items && items.map((item, idx) => (

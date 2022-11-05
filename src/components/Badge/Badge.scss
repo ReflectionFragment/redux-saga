@@ -3,20 +3,38 @@
   width: 15px;
   height: 15px;
   border-radius: 15px;
-  position: relative;
-  margin-right: 20px;
-  left: 10px;
+  margin: 0 10px;
+  border: 1px solid #000000;
 
   &--green {
     background-color: #7cad68;
   }
+
   &--blue {
     background-color: rgba(28, 114, 224, 0.94);
   }
+
   &--pink {
     background-color: rgb(252, 138, 210);
   }
+
   &--red {
     background-color: rgb(185, 19, 19);
+  }
+
+  &--lime {
+    background-color: rgb(185, 224, 7);
+  }
+
+  &--purple {
+    background-color: rgb(252, 0, 151);
+  }
+
+  &--black {
+    background-color: rgb(0, 0, 0);
+  }
+
+  &--grey {
+    background-color: rgb(152, 152, 152);
   }
 }
