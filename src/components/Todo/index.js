@@ -18,24 +18,14 @@ const Todo = () => {
                     }
                 ]}
                 />
-                <List
-                    items = {[
-                        {
-                            color: 'green' ,
-                            name: "11234!",
-                            active: 1
-                        },
-                        {
-                            color: 'pink',
-                            name: "11234!"
-                        },
-                        {
-                            color: 'blue' ,
-                            name: "112345!"
-                        }
-
-                    ]
-                }
+                <List items = {DB.lists.map(item=>
+                    {
+                        item.color = DB.colors.find (
+                            // color => color.id === colorId).name
+                        color => color.id === item.id).name;
+                        return item;
+                    }
+                )}
                     isRemovable
                 />
                 <Popup colors = {DB.colors} />
