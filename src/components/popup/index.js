@@ -9,7 +9,7 @@ import plus from "../../assets/icons/plus.svg";
 const Popup = ({colors}) => {
     const [visible, setVisible] = React.useState(false);
     const [selectColor, setColor] = React.useState(colors[0].id);
-
+    const [inputValue, setInputValue] = React.useState('');
     console.log(selectColor)
 
     return (
@@ -29,7 +29,18 @@ const Popup = ({colors}) => {
 
             {visible && <div className='addList__pop'>
 
-                <input className='field' value='pop' type="text"/>
+                <input
+                    className='field'
+                    value={inputValue}
+                    type='text'
+                    onChange={e=>{
+                        console.log(e.target.value);
+                        setInputValue(e.target.value);
+                }}
+
+                  placeholder="названи списка"
+
+                />
 
                 <button className='list__add-button'>
                     <span className='test'>Add+</span>
@@ -39,10 +50,10 @@ const Popup = ({colors}) => {
                         <Badge onClick={() => setColor(color.id)}
                                key={index}
                                color={color.name}
-                               className={selectColor===color.id && 'active'}              />
+                               className={selectColor === color.id && 'active'}/>
                     ))}
                 </div>
-                <img className='close' onClick={()=>setVisible(false)} src={close} alt='x'/>
+                <img className='close' onClick={() => setVisible(false)} src={close} alt='x'/>
             </div>}
         </div>
     )
