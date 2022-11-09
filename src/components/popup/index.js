@@ -6,11 +6,22 @@ import './Popup.scss';
 import close from "../../assets/icons/close.svg";
 import plus from "../../assets/icons/plus.svg";
 
-const Popup = ({colors}) => {
+const Popup = ({colors, onAdd}) => {
     const [visible, setVisible] = React.useState(false);
-    const [selectColor, setColor] = React.useState(colors[0].id);
+    const [selectedColor, setColor] = React.useState(colors[0].id);
     const [inputValue, setInputValue] = React.useState('');
-    console.log(selectColor)
+
+    const addList = () => {
+        if (!inputValue) {
+            alert('конечно, ты долбаёб!')
+            return;
+        }
+        const m = (Math.round(Math.random()*100))
+        const color= colors.find(c=>selectedColor===c.id).name
+
+        onAdd(
+            {id: m, name: inputValue, color: color}
+        )};
 
     return (
         <div className='addList'>
@@ -33,16 +44,14 @@ const Popup = ({colors}) => {
                     className='field'
                     value={inputValue}
                     type='text'
-                    onChange={e=>{
-                        console.log(e.target.value);
-                        setInputValue(e.target.value);
-                }}
-
-                  placeholder="названи списка"
+                    onChange={event => {
+                        setInputValue(event.target.value)
+                    }}
+                    placeholder="названи списка"
 
                 />
 
-                <button className='list__add-button'>
+                <button onClick={addList} className='list__add-button'>
                     <span className='test'>Add+</span>
                 </button>
                 <div className='addList__colors'>
@@ -50,7 +59,7 @@ const Popup = ({colors}) => {
                         <Badge onClick={() => setColor(color.id)}
                                key={index}
                                color={color.name}
-                               className={selectColor === color.id && 'active'}/>
+                               className={selectedColor === color.id && 'active'}/>
                     ))}
                 </div>
                 <img className='close' onClick={() => setVisible(false)} src={close} alt='x'/>

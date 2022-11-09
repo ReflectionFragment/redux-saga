@@ -6,6 +6,21 @@ import all from '../../assets/icons/all.svg'
 import DB from '../../assets/DB.json'
 
 const Todo = () => {
+    const [lists, setList] = React.useState(DB.lists.map(item=>
+        {
+            item.color = DB.colors.find (
+                // color => color.id === colorId).name
+                color => color.id === item.id).name;
+            return item;
+        }
+    ))
+    const onAddList=(obj)=> {
+        const newList = [
+            ...lists, obj
+        ];
+
+        setList(newList)
+    }
     return (
         <div className='todo'>
             <div className="todo__sideBar">
@@ -18,17 +33,10 @@ const Todo = () => {
                     }
                 ]}
                 />
-                <List items = {DB.lists.map(item=>
-                    {
-                        item.color = DB.colors.find (
-                            // color => color.id === colorId).name
-                        color => color.id === item.id).name;
-                        return item;
-                    }
-                )}
+                <List items = {lists}
                     isRemovable
                 />
-                <Popup colors = {DB.colors} />
+                <Popup onAdd={onAddList} colors = {DB.colors} />
 
             </div>
 
