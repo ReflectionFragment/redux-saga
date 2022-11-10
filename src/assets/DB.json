@@ -2,18 +2,18 @@
   "lists": [
     {
       "name": "12",
-      "colorId": 5,
-      "id": 1
+      "colorId": 1,
+      "id": 3
     },
     {
       "name": "1fsf",
-      "colorId": 5,
+      "colorId": 2,
       "id": 2
     },
     {
       "name": "ewq",
-      "colorId": 5,
-      "id": 3
+      "colorId": 3,
+      "id": 1
     }
   ],
   "tasks": [
