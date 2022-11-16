@@ -60,3 +60,10 @@ max-width: 150px;
 .nav__link:first-child {
     margin: 0;
 }
+.list__close {
+    box-sizing: border-box;
+    right: -15px;
+    top: -15px;
+    height: 35px;
+    border-radius: 20px;
+}

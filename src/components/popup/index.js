@@ -11,6 +11,12 @@ const Popup = ({colors, onAdd}) => {
     const [selectedColor, setColor] = React.useState(colors[0].id);
     const [inputValue, setInputValue] = React.useState('');
 
+    const onClose =()=>{
+        setVisible (false)
+        setColor (colors[0].id)
+        setInputValue ('')
+    }
+
     const addList = () => {
         if (!inputValue) {
             alert('конечно, ты долбаёб!')
@@ -21,7 +27,9 @@ const Popup = ({colors, onAdd}) => {
 
         onAdd(
             {id: m, name: inputValue, color: color}
-        )};
+        )
+        onClose();
+    };
 
     return (
         <div className='addList'>
@@ -34,6 +42,7 @@ const Popup = ({colors, onAdd}) => {
                             icon: plus,
                             name: "Добавить!",
                             active: true
+
                         }
                     ]}
             />
@@ -48,7 +57,6 @@ const Popup = ({colors, onAdd}) => {
                         setInputValue(event.target.value)
                     }}
                     placeholder="названи списка"
-
                 />
 
                 <button onClick={addList} className='list__add-button'>
@@ -59,10 +67,11 @@ const Popup = ({colors, onAdd}) => {
                         <Badge onClick={() => setColor(color.id)}
                                key={index}
                                color={color.name}
-                               className={selectedColor === color.id && 'active'}/>
+                               className={selectedColor === color.id && 'active'}
+                        />
                     ))}
                 </div>
-                <img className='close' onClick={() => setVisible(false)} src={close} alt='x'/>
+                <img className='close' onClick={onClose} src={close} alt='x'/>
             </div>}
         </div>
     )

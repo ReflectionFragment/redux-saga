@@ -7,6 +7,8 @@
 }
 
 .list {
+  $self: &;
+
   margin-bottom: 30px;
 
   &__add-button {
@@ -26,10 +28,23 @@
     align-items: center;
     list-style: none;
     padding: 5px 10px;
-
     cursor: pointer;
+
+    &:hover #{$self}__close {
+      opacity: 0.2;
+    }
+
+    #{$self}__close {
+      opacity: 0;
+
+      &:hover {
+        opacity: 0.8;
+      }
+    }
+
+
     &:hover{
-      background: rgba(123, 89, 126, 0.93);
+      background: rgba(120, 143, 140, 0.56);
       border-radius: 2px;
     }
     &.active {
@@ -53,6 +68,11 @@
   }
 
   span {
+    flex:1;
     margin-left: 0;
+  }
+  &:hover{
+    background: rgba(159, 231, 160, 0.06);
+    border-radius: 16px;
   }
 }

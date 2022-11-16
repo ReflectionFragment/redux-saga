@@ -11,9 +11,8 @@ const Todo = () => {
                 color => color.id === item.colorId);
             if (color != null) {
                 item.color = color.name
-            }
-            else {
-                item.color= "black"
+            } else {
+                item.color = "black"
             }
             return item;
         }
@@ -22,9 +21,9 @@ const Todo = () => {
         const newList = [
             ...lists, obj
         ];
-
         setList(newList)
     }
+
     return (
         <div className='todo'>
             <div className="todo__sideBar">
@@ -39,9 +38,13 @@ const Todo = () => {
                 />
                 <List items={lists}
                       isRemovable
+                      onRemove={
+                          (item) => {alert("Пашел нахуй!");
+                            console.log(item)}
+                      }
+
                 />
                 <Popup onAdd={onAddList} colors={DB.colors}/>
-
             </div>
 
             <div className="todo__tasks">
