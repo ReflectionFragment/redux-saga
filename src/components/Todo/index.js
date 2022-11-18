@@ -1,11 +1,17 @@
 import React from "react";
-import List from "../List";
+import axios from "axios";
+
+import {List,Tasks,Popup} from '../index' ;
+
 import './Todo.scss';
-import Popup from "../popup";
 import all from '../../assets/icons/all.svg'
 import DB from '../../assets/DB.json'
 
 const Todo = () => {
+ axios.get('http://localhost:3001/lists?_expand=color').then(({data})=>{
+    console.log(data)
+    })
+
     const [lists, setList] = React.useState(DB.lists.map(item => {
             let color = DB.colors.find(
                 color => color.id === item.colorId);
@@ -39,17 +45,17 @@ const Todo = () => {
                 <List items={lists}
                       isRemovable
                       onRemove={
-                          (item) => {alert("Пашел нахуй!");
-                            console.log(item)}
+                          (item) => {
+                              alert("Пашел нахуй!");
+                              console.log(item)
+                          }
                       }
 
                 />
                 <Popup onAdd={onAddList} colors={DB.colors}/>
             </div>
 
-            <div className="todo__tasks">
-                <span>123465789</span>
-            </div>
+            <Tasks />
         </div>
     )
 };
