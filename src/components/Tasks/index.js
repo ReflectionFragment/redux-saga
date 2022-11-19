@@ -18,7 +18,7 @@ const Tasks = () => {
 
             <div className='checkbox'>
             <input id="check" type="checkbox"/>
-             <label For="check">
+             <label htmlFor="check">
                  <img className='ok' src={ok} alt='ok'/>
 
              </label>

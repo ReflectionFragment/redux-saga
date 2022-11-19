@@ -1,15 +1,23 @@
-import React from "react";
+import React, {useEffect} from "react";
+import axios from "axios";
+
 import List from "../List";
 import Badge from "../Badge";
+
 import './Popup.scss';
 
 import close from "../../assets/icons/close.svg";
 import plus from "../../assets/icons/plus.svg";
 
+
 const Popup = ({colors, onAdd}) => {
     const [visible, setVisible] = React.useState(false);
-    const [selectedColor, setColor] = React.useState(colors[0].id);
+    const [selectedColor, setColor] = React.useState(null);
     const [inputValue, setInputValue] = React.useState('');
+
+  useEffect(()=>{
+    setColor(colors[0].id);
+  },[colors])
 
     const onClose =()=>{
         setVisible (false)
@@ -22,12 +30,13 @@ const Popup = ({colors, onAdd}) => {
             alert('конечно, ты долбаёб!')
             return;
         }
-        const m = (Math.round(Math.random()*100))
-        const color= colors.find(c=>selectedColor===c.id).name
+        // const m = (Math.round(Math.random()*100)); const color= colors.find(c=>selectedColor===c.id).name;
 
-        onAdd(
-            {id: m, name: inputValue, color: color}
-        )
+        axios.post('http://localhost:3001/lists',
+            {name: inputValue, colorId:selectedColor })
+            .then(({data})=>{console.log(data)
+            });
+        onAdd();
         onClose();
     };
 
