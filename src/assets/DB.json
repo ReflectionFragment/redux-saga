@@ -1,54 +1,36 @@
 {
   "lists": [
     {
-      "name": "12",
-      "colorId": 1,
-      "id": 3
+      "name": "134",
+      "colorId": 4,
+      "id": 1
     },
     {
-      "name": "1fsf",
-      "colorId": 2,
+      "name": "2345",
+      "colorId": 4,
       "id": 2
     },
     {
-      "name": "ewq",
+      "name": "1234",
       "colorId": 3,
-      "id": 1
+      "id": 3
     },
     {
-      "name": "123456",
-      "colorId": "grey",
+      "name": "qwer",
+      "colorId": 5,
       "id": 4
     },
     {
-      "name": "567",
-      "colorId": "grey",
+      "name": "12345",
+      "colorId": 6,
       "id": 5
-    },
-    {
-      "name": "73547",
-      "colorId": 1,
-      "id": 6
-    },
-    {
-      "name": "etyey",
-      "colorId": 1,
-      "id": 7
-    }
-  ],
-  "tasks": [
-    {
-      "listId": "нет",
-      "text": "123",
-      "completed": false,
-      "id": 1
     }
   ],
   "colors": [
     {
-      "id": 1,
-      "hex": "#C9D1D3",
-      "name": "grey"
+      "id": 8,
+      "hex": "#FF6464",
+      "name": "red"
     },
     {
       "id": 2,
@@ -81,9 +63,9 @@
       "name": "black"
     },
     {
-      "id": 8,
-      "hex": "#FF6464",
-      "name": "red"
+      "id": 1,
+      "hex": "#C9D1D3",
+      "name": "grey"
     }
   ]
 }

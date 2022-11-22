@@ -12,32 +12,38 @@ import plus from "../../assets/icons/plus.svg";
 
 const Popup = ({colors, onAdd}) => {
     const [visible, setVisible] = React.useState(false);
-    const [selectedColor, setColor] = React.useState(null);
-    const [inputValue, setInputValue] = React.useState('');
-
-  useEffect(()=>{
-    setColor(colors[0].id);
-  },[colors])
+    const [selectedColor, setColor] = React.useState();
+    const [inputValue, setInputValue] = React.useState();
+    const [Load, setLoad] = React.useState(false)
+    useEffect(() => {
+        if (Array.isArray(colors)) {
+            setColor(colors[0].id);
+        }
+    }, [colors]);
 
     const onClose =()=>{
-        setVisible (false)
-        setColor (colors[0].id)
-        setInputValue ('')
+        setVisible(false)
+        setColor(colors[0].id)
+        setInputValue('')
     }
 
     const addList = () => {
         if (!inputValue) {
-            alert('конечно, ты долбаёб!')
+            alert('Введите название!')
             return;
         }
-        // const m = (Math.round(Math.random()*100)); const color= colors.find(c=>selectedColor===c.id).name;
-
+        setLoad(true);
         axios.post('http://localhost:3001/lists',
-            {name: inputValue, colorId:selectedColor })
-            .then(({data})=>{console.log(data)
-            });
-        onAdd();
-        onClose();
+            {name: inputValue, colorId: selectedColor})
+            .then(({data}) => {
+                const color = colors.find(c=> c.id === selectedColor).name;
+                const newObj = {...data, color: color};
+                onAdd(newObj)
+                onClose();
+            })
+            .finally(()=>{
+            setLoad(false);
+        });
     };
 
     return (
@@ -51,7 +57,6 @@ const Popup = ({colors, onAdd}) => {
                             icon: plus,
                             name: "Добавить!",
                             active: true
-
                         }
                     ]}
             />
@@ -69,7 +74,10 @@ const Popup = ({colors, onAdd}) => {
                 />
 
                 <button onClick={addList} className='list__add-button'>
-                    <span className='test'>Add+</span>
+                        <span className='test'>
+                           { Load? "Добавление..." : "добавить"}
+
+                        </span>
                 </button>
                 <div className='addList__colors'>
                     {colors.map((color, index) => (

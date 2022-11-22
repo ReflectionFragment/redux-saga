@@ -1,6 +1,6 @@
 import React from "react";
 import axios from "axios";
-// import {useEffect} from "react";
+
 
 import {List,Tasks,Popup} from '../index' ;
 
@@ -9,8 +9,8 @@ import all from '../../assets/icons/all.svg'
 import DB from '../../assets/DB.json'
 
 const Todo = () => {
- axios.get('http://localhost:3001/lists?_expand=color').then(({data})=>{
-    console.log(data)
+ axios.get('http://localhost:3001/lists?_expand=color').then(()=>{
+
     })
 
     const [lists, setList] = React.useState(DB.lists.map(item => {
@@ -24,9 +24,9 @@ const Todo = () => {
             return item;
         }
     ))
-    const onAddList = (obj) => {
+    const onAddList = (newObj) => {
         const newList = [
-            ...lists, obj
+            ...lists, newObj
         ];
         setList(newList)
     }
@@ -43,16 +43,14 @@ const Todo = () => {
                         }
                     ]}
                 />
+                {lists ? (
                 <List items={lists}
                       isRemovable
-                      onRemove={
-                          (item) => {
-                              alert("Пашел нахуй!");
-                              console.log(item)
-                          }
-                      }
-
-                />
+                      onRemove={id => {
+                            const newList= lists.filter(item=> item.id !== id);
+                          setList(newList);
+                      }}
+                /> ) : (<h2>'Иди нахуй'</h2>)}
                 <Popup onAdd={onAddList} colors={DB.colors}/>
             </div>
 
