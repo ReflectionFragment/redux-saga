@@ -1,49 +1,6 @@
 {
-  "lists": [
-    {
-      "name": "12",
-      "colorId": 1,
-      "id": 3
-    },
-    {
-      "name": "1fsf",
-      "colorId": 2,
-      "id": 2
-    },
-    {
-      "name": "ewq",
-      "colorId": 3,
-      "id": 1
-    },
-    {
-      "name": "123456",
-      "colorId": "grey",
-      "id": 4
-    },
-    {
-      "name": "567",
-      "colorId": "grey",
-      "id": 5
-    },
-    {
-      "name": "73547",
-      "colorId": 1,
-      "id": 6
-    },
-    {
-      "name": "etyey",
-      "colorId": 1,
-      "id": 7
-    }
-  ],
-  "tasks": [
-    {
-      "listId": "нет",
-      "text": "123",
-      "completed": false,
-      "id": 1
-    }
-  ],
+  "lists": [],
+  "tasks": [],
   "colors": [
     {
       "id": 1,
@@ -56,11 +13,6 @@
       "name": "green"
     },
     {
-      "id": 3,
-      "hex": "#64C4ED",
-      "name": "blue"
-    },
-    {
       "id": 4,
       "hex": "#FFBBCC",
       "name": "pink"
@@ -71,6 +23,16 @@
       "name": "lime"
     },
     {
+      "id": 3,
+      "hex": "#C355F5",
+      "name": "blue"
+    },
+    {
+      "id": 8,
+      "hex": "#000",
+      "name": "black"
+    },
+    {
       "id": 6,
       "hex": "#C355F5",
       "name": "purple"
@@ -78,11 +40,6 @@
     {
       "id": 7,
       "hex": "#110133",
-      "name": "black"
-    },
-    {
-      "id": 8,
-      "hex": "#FF6464",
       "name": "red"
     }
   ]

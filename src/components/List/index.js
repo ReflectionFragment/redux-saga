@@ -3,11 +3,15 @@ import './List.scss';
 import Badge from "../Badge";
 import classname from "classname";
 import close from '../../assets/icons/close.svg';
+import axios from "axios";
 
 function List({items, isRemovable, onClick, onRemove}) {
-    const onRemovableList = (item) => {
+    const onRemovableList = item => {
         if (window.confirm("удалить?")) {
-            onRemove(item);
+            axios.delete ('http://localhost:3001/lists/' + item.id)
+            .then(()=>{
+                onRemove(item.id);
+            })
 
         }
     }

@@ -12,9 +12,9 @@ import plus from "../../assets/icons/plus.svg";
 
 const Popup = ({colors, onAdd}) => {
     const [visible, setVisible] = React.useState(false);
-    const [selectedColor, setColor] = React.useState(null);
+    const [selectedColor, setColor] = React.useState('');
     const [inputValue, setInputValue] = React.useState('');
-
+    const [load, setLoad] = React.useState(false);
   useEffect(()=>{
     setColor(colors[0].id);
   },[colors])
@@ -27,17 +27,22 @@ const Popup = ({colors, onAdd}) => {
 
     const addList = () => {
         if (!inputValue) {
-            alert('конечно, ты долбаёб!')
+            alert('plz, Name')
             return;
         }
-        // const m = (Math.round(Math.random()*100)); const color= colors.find(c=>selectedColor===c.id).name;
 
+        setLoad(true)
         axios.post('http://localhost:3001/lists',
-            {name: inputValue, colorId:selectedColor })
-            .then(({data})=>{console.log(data)
-            });
-        onAdd();
-        onClose();
+            {name: inputValue, colorId:selectedColor})
+            .then(({data})=>{
+                const color = colors.find(c=>c.id === selectedColor).name;
+                const listObj = {...data, color: color}
+                onAdd(listObj);
+                onClose();
+            })
+            .finally(() => {
+            setLoad(false)})
+
     };
 
     return (
@@ -69,7 +74,9 @@ const Popup = ({colors, onAdd}) => {
                 />
 
                 <button onClick={addList} className='list__add-button'>
-                    <span className='test'>Add+</span>
+                    <span className='test'>
+                        {load ? 'добавляем' : 'Добавить)'}
+                    </span>
                 </button>
                 <div className='addList__colors'>
                     {colors.map((color, index) => (
