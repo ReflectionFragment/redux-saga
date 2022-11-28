@@ -53,8 +53,7 @@ const Todo = () => {
                 /> ) : (<h2>'Иди нахуй'</h2>)}
                 <Popup onAdd={onAddList} colors={DB.colors}/>
             </div>
-
-            <Tasks />
+            { lists && <Tasks list={lists[0]}/>}
         </div>
     )
 };

@@ -6,24 +6,48 @@
       "id": 1
     },
     {
-      "name": "2345",
-      "colorId": 4,
+      "name": "qewrqweweqr",
+      "colorId": 6,
       "id": 2
     },
     {
-      "name": "1234",
-      "colorId": 3,
+      "name": "23131313213132132132131311516161631",
+      "colorId": 8,
       "id": 3
+    }
+  ],
+  "number": [
+    {
+      "num": "5",
+      "id": 1
     },
     {
-      "name": "qwer",
-      "colorId": 5,
-      "id": 4
+      "num": "3",
+      "id": 2
     },
     {
-      "name": "12345",
-      "colorId": 6,
-      "id": 5
+      "num": "4",
+      "id": 3
+    }
+  ],
+  "tasks": [
+    {
+      "listId": 2,
+      "text": "5",
+      "id": 1,
+      "completed": false
+    },
+    {
+      "listId": 4,
+      "text": "3",
+      "id": 2,
+      "completed": false
+    },
+    {
+      "listId": 3,
+      "text": "4",
+      "id": 3,
+      "completed": false
     }
   ],
   "colors": [

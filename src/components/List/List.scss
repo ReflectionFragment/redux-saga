@@ -25,6 +25,7 @@
 
   li {
     display: flex;
+    margin-right: 30px;
     align-items: center;
     list-style: none;
     padding: 5px 10px;
@@ -33,13 +34,16 @@
 
     &:hover #{$self}__close {
       opacity: 0.2;
+
     }
 
     #{$self}__close {
       opacity: 0;
 
       &:hover {
-        opacity: 0.8;
+        opacity: 1;
+        background-color: rgba(0, 255, 255, 0.18);
+        border: 3px solid #7cad68;
       }
     }
 
@@ -71,10 +75,8 @@
 
   span {
     flex:1;
-    margin-left: 0;
-  }
-  &:hover{
-    background: rgba(159, 231, 160, 0.06);
-    border-radius: 16px;
+    width: 100%;
+    overflow-wrap: break-word;
+
   }
 }
