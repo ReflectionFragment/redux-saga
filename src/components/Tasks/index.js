@@ -4,11 +4,11 @@ import ok from "../../assets/icons/ok.svg";
 
 import './Tasks.scss';
 
-const Tasks = () => {
+const Tasks = ({list}) => {
     return (
         <div className="tasks">
             <div className='tasks__title'>
-                Задачи
+                {list.name}
                 <img
                     onClick={() => alert('Блять')}
                     className='edit'
@@ -16,14 +16,23 @@ const Tasks = () => {
                 />
             </div>
 
-            <div className='checkbox'>
-            <input id="check" type="checkbox"/>
-             <label htmlFor="check">
-                 <img className='ok' src={ok} alt='ok'/>
+            <div>
+               {list.tasks.map(task => (
 
-             </label>
-                <h3>a</h3>
-            </div>
+                  <div className='tasks__items-row'>
+                      <div className='checkbox'>
+                          <input id="check" type="checkbox"/>
+                          <label htmlFor="check">
+                              <img className='ok' src={ok} alt='ok'/>
+                          </label>
+                          <h3>
+                              {task.name}
+                          </h3>
+                      </div>
+                  </div>
+               ))}
+           </div>
+
         </div>
     )
 }

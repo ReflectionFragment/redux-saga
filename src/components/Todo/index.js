@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useEffect} from "react";
 import axios from "axios";
 
 
@@ -9,21 +9,18 @@ import all from '../../assets/icons/all.svg'
 import DB from '../../assets/DB.json'
 
 const Todo = () => {
- axios.get('http://localhost:3001/lists?_expand=color').then(()=>{
+    const [lists, setList] = React.useState(null);
+    const [color, setColor] = React.useState(null);
 
-    })
+    useEffect(()=> {
+     axios.get('http://localhost:3001/lists?_expand=color&_embed=tasks').then(({data})=>{
+         setList(data)
+     });
+     axios.get('http://localhost:3001/colors').then(({data})=>{
+         setColor(data)
+     });
+    },[]);
 
-    const [lists, setList] = React.useState(DB.lists.map(item => {
-            let color = DB.colors.find(
-                color => color.id === item.colorId);
-            if (color != null) {
-                item.color = color.name
-            } else {
-                item.color = "black"
-            }
-            return item;
-        }
-    ))
     const onAddList = (newObj) => {
         const newList = [
             ...lists, newObj
@@ -50,8 +47,8 @@ const Todo = () => {
                             const newList= lists.filter(item=> item.id !== id);
                           setList(newList);
                       }}
-                /> ) : (<h2>'Иди нахуй'</h2>)}
-                <Popup onAdd={onAddList} colors={DB.colors}/>
+                /> ) : (<h2>или идёт загрузка или у тя нихуя не сраотает тварь ты ебаная  </h2>)}
+                <Popup onAdd={onAddList} color={color}/>
             </div>
             { lists && <Tasks list={lists[0]}/>}
         </div>

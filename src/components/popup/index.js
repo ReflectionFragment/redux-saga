@@ -10,20 +10,20 @@ import close from "../../assets/icons/close.svg";
 import plus from "../../assets/icons/plus.svg";
 
 
-const Popup = ({colors, onAdd}) => {
+const Popup = ({color, onAdd}) => {
     const [visible, setVisible] = React.useState(false);
-    const [selectedColor, setColor] = React.useState();
-    const [inputValue, setInputValue] = React.useState();
+    const [selectedColor, setColor] = React.useState(null);
+    const [inputValue, setInputValue] = React.useState('');
     const [Load, setLoad] = React.useState(false)
     useEffect(() => {
-        if (Array.isArray(colors)) {
-            setColor(colors[0].id);
+        if (Array.isArray(color)) {
+            setColor(color[0].id);
         }
-    }, [colors]);
+    }, [color]);
 
     const onClose =()=>{
         setVisible(false)
-        setColor(colors[0].id)
+        setColor(color[0].id)
         setInputValue('')
     }
 
@@ -36,8 +36,8 @@ const Popup = ({colors, onAdd}) => {
         axios.post('http://localhost:3001/lists',
             {name: inputValue, colorId: selectedColor})
             .then(({data}) => {
-                const color = colors.find(c=> c.id === selectedColor).name;
-                const newObj = {...data, color: color};
+                const color = color.find(c=> c.id === selectedColor).name;
+                const newObj = {...data, color: {name: color}};
                 onAdd(newObj)
                 onClose();
             })
@@ -80,7 +80,7 @@ const Popup = ({colors, onAdd}) => {
                         </span>
                 </button>
                 <div className='addList__colors'>
-                    {colors.map((color, index) => (
+                    {color.map((color, index) => (
                         <Badge onClick={() => setColor(color.id)}
                                key={index}
                                color={color.name}

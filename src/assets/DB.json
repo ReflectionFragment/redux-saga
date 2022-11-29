@@ -1,18 +1,13 @@
 {
   "lists": [
     {
-      "name": "134",
+      "name": "456",
       "colorId": 4,
-      "id": 1
-    },
-    {
-      "name": "qewrqweweqr",
-      "colorId": 6,
       "id": 2
     },
     {
-      "name": "23131313213132132132131311516161631",
-      "colorId": 8,
+      "name": "yopi",
+      "colorId": 6,
       "id": 3
     }
   ],
@@ -30,26 +25,7 @@
       "id": 3
     }
   ],
-  "tasks": [
-    {
-      "listId": 2,
-      "text": "5",
-      "id": 1,
-      "completed": false
-    },
-    {
-      "listId": 4,
-      "text": "3",
-      "id": 2,
-      "completed": false
-    },
-    {
-      "listId": 3,
-      "text": "4",
-      "id": 3,
-      "completed": false
-    }
-  ],
+  "tasks": [],
   "colors": [
     {
       "id": 8,

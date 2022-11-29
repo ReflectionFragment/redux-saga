@@ -13,7 +13,6 @@ function List({items, isRemovable, onClick, onRemove}) {
                 .then(() => {
                     onRemove(item.id)
                 });
-
         }
     }
     return (
