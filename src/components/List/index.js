@@ -23,7 +23,7 @@ function List({items, isRemovable, onClick, onRemove}) {
                     <i>
                         {item.icon ? (<img src={item.icon} alt='All'/>
                         ) : (
-                            <Badge color={item.color}/>
+                            <Badge color={item.color.name}/>
                         )}
                     </i>
                     <span>

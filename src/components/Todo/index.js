@@ -10,7 +10,7 @@ import DB from '../../assets/DB.json'
 
 const Todo = () => {
     const [lists, setList] = React.useState(null);
-    const [color, setColor] = React.useState(null);
+    const [colors, setColor] = React.useState(null);
 
     useEffect(()=> {
      axios.get('http://localhost:3001/lists?_expand=color&_embed=tasks').then(({data})=>{
@@ -48,7 +48,7 @@ const Todo = () => {
                           setList(newList);
                       }}
                 /> ) : (<h2>или идёт загрузка или у тя нихуя не сраотает тварь ты ебаная  </h2>)}
-                <Popup onAdd={onAddList} color={color}/>
+                <Popup onAdd={onAddList} colors={colors}/>
             </div>
             { lists && <Tasks list={lists[0]}/>}
         </div>
