@@ -4,6 +4,7 @@ import Index from "./components/Todo";
 import {useDispatch, useSelector} from "react-redux";
 import {GenerateId} from "./store/helpers/keyHelpera";
 import {addCustomerAction, removeCustomerAction} from "./store/CustomersReducer";
+import {FetchCustomers} from "./store/async/cust";
 
 
 function App() {
@@ -31,6 +32,7 @@ function App() {
             <button onClick={()=>get(Number(prompt('give me more madness?')))}>переломный момент твоей шконки</button>
             <button onClick={()=>add(Number(prompt('suk')))}>белый туман, черного дракона</button>
             <button onClick={()=>addCustomers(prompt('give me more madness имён?'))}>+ и</button>
+<button onClick={()=>dispatch(FetchCustomers())}> Из базы</button>
 
             <div>
 
