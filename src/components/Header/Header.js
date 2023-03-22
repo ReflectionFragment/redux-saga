@@ -6,7 +6,7 @@ return (
     <div className="container">
         <div className="header_inner">
             <div className="header__logo">
-                <img className="tutu" src={require("../../assets/img/rose.jpg")} alt="spy"/>
+                <img className="logo" src={require("../../assets/img/rose.jpg")} alt="spy"/>
             </div>
             <div className="nav">
                 <a className="nav__link" href='src/components/Header/Header#'>

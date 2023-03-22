@@ -1,26 +1,13 @@
 body {
-    background: url("assets/img/red.jpg") no-repeat;
-    background-size: cover;
+    /*background: radial-gradient(circle at 80% 50%, #FED373 4%, #F15245 30%, #D92E7F 62%, #9B36B7 85%, #515ECF);*/
 
+    /*background-color: #515369;*/
 }
-
-
 
 /*______________header______________*/
 
-.header{
-display: flex;
-    flex-direction: column;
-    justify-content: start;
-}
-
-.tutu{
+.logo{
     width: 80px;
-}
-.img{
-    width: 100%;
-max-width: 150px;
-
 }
 .header_inner{
     display: flex;
@@ -34,8 +21,7 @@ max-width: 150px;
 .container{
     background-color: rgba(81, 83, 105, 0.47);
     width: 100%;
-    max-width: 1920px;
-    margin: 0   auto;
+    margin: 0 ;
 }
 
 /*-------------nav---------------*/
@@ -50,8 +36,5 @@ max-width: 150px;
     text-decoration: none;
 }
 .nav__link:hover{
-    opacity: 1;
-}
-.nav__link:first-child {
-    margin: 0;
+    opacity: 50%;
 }
