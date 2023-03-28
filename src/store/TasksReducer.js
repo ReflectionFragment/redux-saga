@@ -1,5 +1,5 @@
 const defaultState = {
-    customers: [],
+    customers: []
 }
 const ADD_CUSTOMERS = 'ADD_CUSTOMERS'
 const REMOVE_CUSTOMER = 'REMOVE_CUSTOMER'
@@ -11,7 +11,6 @@ export const TasksReducer = (state=defaultState, action)=> {
             return {...state, customers: [...state.customers, action.payload]}
         case ADD_CUSTOMERS_BASE:
             return {...state, customers: [...state.customers, ...action.payload]}
-
         case REMOVE_CUSTOMER:
             return {...state, customers: state.customers.filter(customer => customer.id !== action.payload)}
         default:
