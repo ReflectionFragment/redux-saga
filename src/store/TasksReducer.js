@@ -5,7 +5,7 @@ const ADD_CUSTOMERS = 'ADD_CUSTOMERS'
 const REMOVE_CUSTOMER = 'REMOVE_CUSTOMER'
 const ADD_CUSTOMERS_BASE = 'ADD_CUSTOMERS_BASE'
 
-export const CustomersReducer = (state=defaultState, action)=> {
+export const TasksReducer = (state=defaultState, action)=> {
     switch (action.type) {
         case ADD_CUSTOMERS:
             return {...state, customers: [...state.customers, action.payload]}
@@ -19,6 +19,6 @@ export const CustomersReducer = (state=defaultState, action)=> {
     }
 };
 
-export const addCustomerAction = (payload)=>({type:ADD_CUSTOMERS, payload})
-export const addCustomerBaseAction = (payload)=>({type:ADD_CUSTOMERS_BASE, payload})
-export const removeCustomerAction = (payload)=>({type:REMOVE_CUSTOMER, payload})
+export const addTaskAction = (payload)=>({type:ADD_CUSTOMERS, payload})
+export const addTaskBaseAction = (payload)=>({type:ADD_CUSTOMERS_BASE, payload})
+export const removeTaskAction = (payload)=>({type:REMOVE_CUSTOMER, payload})
