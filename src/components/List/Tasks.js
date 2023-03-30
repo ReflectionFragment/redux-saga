@@ -4,8 +4,10 @@ import {useDispatch, useSelector} from "react-redux";
 import classname from "classname";
 import Badge from "../Badge";
 import {removeTaskAction} from "../../store/TasksReducer";
+import './List.scss';
 
-export const Tasks = () => {
+
+const Tasks = () => {
     const dispatch = useDispatch();
     const customers = useSelector(state => state.customers.customers);
 
@@ -15,17 +17,19 @@ export const Tasks = () => {
     }
 
     return (
+
         <ul  className='list'>
             {customers.length > 0 ? customers.map(task  => (
-                        <li onClick={()=> removeTasks(task)}
+                        <li
                             className={classname(customers.active ? 'active' : '')}
                             key={GenerateId()}>
                             <i>
-                                {task.icon ? (<img src={task.icon} alt='All'/>) : (<Badge color={task.color}/>)}
+                                {task.icon ? (<img src={task.icon} alt='All'/>) : (<Badge color={task.color ? task.color : 'blue'}/>)}
                             </i>
                             <span>
                                  {task.name}
                             </span>
+                            <button className='removeButton' onClick={()=> removeTasks(task)}>-</button>
                         </li>)) :
                 <div>
                         Задач нет
@@ -33,3 +37,4 @@ export const Tasks = () => {
         </ul>)
 }
 
+export default Tasks
