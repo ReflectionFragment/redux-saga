@@ -1,24 +1,31 @@
 import React from "react";
-// import all from '../../assets/icons/all.svg'
-// import List from "../List";
 import './Todo.scss';
 import {GenerateId} from "../../store/helpers/keyHelpera";
 import {useDispatch, useSelector} from "react-redux";
 import {FetchTasks} from "../../store/async/FeatchTasks";
 import {addTaskAction} from "../../store/TasksReducer";
-// import {Popup} from "../Popup";
 import Tasks from "../List/Tasks";
-import {addCash, getCash} from "../../store/CashReducer";
+import {incrementCreator, getCash, asyncIncrementCreator, asyncDecrementCreator} from "../../store/CountReducer";
 
 const Todo = () => {
     const cash = useSelector(state => state.cash.cash);
 
+    const asyncPlus = (cash) => {
+        dispatch(asyncIncrementCreator(cash))
+    };
     const get = (cash) => {
         dispatch(getCash(cash))
     };
+
     const add = (cash) => {
-        dispatch(addCash(cash))
+        dispatch(incrementCreator(cash))
     };
+
+    const asyncMinus = (cash) => {
+        dispatch(asyncDecrementCreator(cash))
+    };
+
+
     const dispatch = useDispatch();
 
     const addTasks = (name) => {
@@ -43,6 +50,9 @@ const Todo = () => {
 
             <div> {cash}
                 <button onClick={() => get()}> Добавтить</button>
+                <button onClick={() => asyncPlus()}>Плюс</button>
+                <button onClick={() => asyncMinus()}>Минус</button>
+
                 <button onClick={() => add()}>Убавить</button>
                 <button onClick={() => dispatch(FetchTasks())}>Рандомные имена из базы</button>
             </div>

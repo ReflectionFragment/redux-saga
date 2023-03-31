@@ -10,29 +10,30 @@ import './List.scss';
 const Tasks = () => {
     const dispatch = useDispatch();
     const customers = useSelector(state => state.customers.customers);
-
     const removeTasks = (task) => {
         dispatch(removeTaskAction(task.id))
-        console.log(task.id)
     }
 
     return (
 
-        <ul  className='list'>
-            {customers.length > 0 ? customers.map(task  => (
-                        <li
-                            className={classname(customers.active ? 'active' : '')}
-                            key={GenerateId()}>
+        <ul className='list'>
+            {customers.length > 0 ? customers.map(task => (
+                    <li
+                        className={classname(customers.active ? 'active' : '')}
+                        key={GenerateId()}>
+                        <div>
                             <i>
-                                {task.icon ? (<img src={task.icon} alt='All'/>) : (<Badge color={task.color ? task.color : 'blue'}/>)}
+                                {task.icon ? (<img src={task.icon} alt='All'/>) : (
+                                    <Badge color={task.color ? task.color : 'blue'}/>)}
                             </i>
                             <span>
                                  {task.name}
                             </span>
-                            <button className='removeButton' onClick={()=> removeTasks(task)}>-</button>
-                        </li>)) :
+                        </div>
+                        <button className='removeButton' onClick={() => removeTasks(task)}>-</button>
+                    </li>)) :
                 <div>
-                        Задач нет
+                    Задач нет
                 </div>}
         </ul>)
 }
