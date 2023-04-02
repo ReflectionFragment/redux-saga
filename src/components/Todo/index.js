@@ -3,13 +3,13 @@ import './Todo.scss';
 import {GenerateId} from "../../store/helpers/keyHelpera";
 import {useDispatch, useSelector} from "react-redux";
 import {FetchTasks} from "../../store/async/FeatchTasks";
-import {addTaskAction} from "../../store/TasksReducer";
+import {addTaskAction} from "../../store/reducers/TasksReducer";
 import Tasks from "../List/Tasks";
-import {incrementCreator, getCash, asyncIncrementCreator, asyncDecrementCreator} from "../../store/CountReducer";
+import {incrementCreator, getCash, asyncIncrementCreator, asyncDecrementCreator} from "../../store/reducers/CountReducer";
 
 const Todo = () => {
     const cash = useSelector(state => state.cash.cash);
-
+const test = useSelector(state=> state.testtReducer.count)
     const asyncPlus = (cash) => {
         dispatch(asyncIncrementCreator(cash))
     };

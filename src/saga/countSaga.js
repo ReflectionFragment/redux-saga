@@ -5,7 +5,7 @@ import {
     asyncDecrementCreator, asyncIncrementCreator,
     // asyncIncrementCreator,
     // incrementCreator,
-} from "../store/CountReducer";
+} from "../store/reducers/CountReducer";
 
 const delay = (ms) =>  new Promise(res=> setTimeout(res, ms))
 

@@ -3,7 +3,7 @@ import {GenerateId} from "../../store/helpers/keyHelpera";
 import {useDispatch, useSelector} from "react-redux";
 import classname from "classname";
 import Badge from "../Badge";
-import {removeTaskAction} from "../../store/TasksReducer";
+import {removeTaskAction} from "../../store/reducers/TasksReducer";
 import './List.scss';
 
 

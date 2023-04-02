@@ -1,4 +1,4 @@
-import {addTaskBaseAction} from "../TasksReducer";
+import {addTaskBaseAction} from "../reducers/TasksReducer";
 
 export const FetchTasks = () => {
     return function (dispatch) {

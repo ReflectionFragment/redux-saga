@@ -3,7 +3,7 @@ import './List.scss';
 // import Badge from "../Badge";
 import classname from "classname";
 import {GenerateId} from "../../store/helpers/keyHelpera";
-import {removeTaskAction} from "../../store/TasksReducer";
+import {removeTaskAction} from "../../store/reducers/TasksReducer";
 import {useDispatch} from "react-redux";
 
 function List({items,active}) {
