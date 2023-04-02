@@ -6,23 +6,26 @@ import {FetchTasks} from "../../store/async/FeatchTasks";
 import {addTaskAction} from "../../store/reducers/TasksReducer";
 import Tasks from "../List/Tasks";
 import {incrementCreator, getCash, asyncIncrementCreator, asyncDecrementCreator} from "../../store/reducers/CountReducer";
+import {testCreator} from "../../store/reducers/TestReduser";
 
 const Todo = () => {
     const cash = useSelector(state => state.cash.cash);
-const test = useSelector(state=> state.testtReducer.count)
-    const asyncPlus = (cash) => {
-        dispatch(asyncIncrementCreator(cash))
+const test = useSelector(state=> state.test.test)
+
+
+    const asyncPlus = () => {
+        dispatch(asyncIncrementCreator())
     };
-    const get = (cash) => {
-        dispatch(getCash(cash))
+    const get = () => {
+        dispatch(getCash())
     };
 
-    const add = (cash) => {
-        dispatch(incrementCreator(cash))
+    const add = () => {
+        dispatch(incrementCreator())
     };
 
-    const asyncMinus = (cash) => {
-        dispatch(asyncDecrementCreator(cash))
+    const asyncMinus = () => {
+        dispatch(asyncDecrementCreator())
     };
 
 
@@ -49,6 +52,8 @@ const test = useSelector(state=> state.testtReducer.count)
             </div>
 
             <div> {cash}
+
+                <button onClick={() => dispatch(testCreator())}> тест</button>
                 <button onClick={() => get()}> Добавтить</button>
                 <button onClick={() => asyncPlus()}>Плюс</button>
                 <button onClick={() => asyncMinus()}>Минус</button>
@@ -57,7 +62,8 @@ const test = useSelector(state=> state.testtReducer.count)
                 <button onClick={() => dispatch(FetchTasks())}>Рандомные имена из базы</button>
             </div>
             <div className="todo__tasks">
-                <span>123465789</span>
+                {test}
+                <span>----</span>
             </div>
         </div>
     )

@@ -11,10 +11,10 @@ export const CountReducer = (state=defaultState, action)=> {
     switch (action.type) {
         case 'ADD_COUNT':
             return {...state, cash: state.cash - 1}
-        case 'ASYNC_INCREMENT':
-            return {...state, cash: state.cash + 10}
-        case 'ASYNC_DECREMENT':
-            return {...state, cash: state.cash - 10}
+        // case 'ASYNC_INCREMENT':
+        //     return {...state, cash: state.cash + 10}
+        // case 'ASYNC_DECREMENT':
+        //     return {...state, cash: state.cash - 10}
         case 'GET_CASH':
             return {...state, cash: state.cash + 1}
         default:
