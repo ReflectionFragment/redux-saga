@@ -4,6 +4,7 @@ const defaultState = {
 const ADD_CUSTOMERS = 'ADD_CUSTOMERS'
 const REMOVE_CUSTOMER = 'REMOVE_CUSTOMER'
 const ADD_CUSTOMERS_BASE = 'ADD_CUSTOMERS_BASE'
+const ADD_TUSK = 'ADD_TUSK'
 
 export const TasksReducer = (state=defaultState, action)=> {
     switch (action.type) {
@@ -18,6 +19,7 @@ export const TasksReducer = (state=defaultState, action)=> {
     }
 };
 
-export const addTaskAction = (payload)=>({type:ADD_CUSTOMERS, payload})
-export const addTaskBaseAction = (payload)=>({type:ADD_CUSTOMERS_BASE, payload})
-export const removeTaskAction = (payload)=>({type:REMOVE_CUSTOMER, payload})
+export const addTaskCreator = (payload)=>({type:ADD_CUSTOMERS, payload})
+export const addTaskBaseCreator = (payload)=>({type:ADD_CUSTOMERS_BASE, payload})
+export const removeTaskCreator = (payload)=>({type:REMOVE_CUSTOMER, payload})
+export const addTusk = ()=>({type:ADD_TUSK})

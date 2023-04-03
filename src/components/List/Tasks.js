@@ -3,7 +3,7 @@ import {GenerateId} from "../../store/helpers/keyHelpera";
 import {useDispatch, useSelector} from "react-redux";
 import classname from "classname";
 import Badge from "../Badge";
-import {removeTaskAction} from "../../store/reducers/TasksReducer";
+import {removeTaskCreator} from "../../store/reducers/TasksReducer";
 import './List.scss';
 
 
@@ -11,7 +11,7 @@ const Tasks = () => {
     const dispatch = useDispatch();
     const customers = useSelector(state => state.customers.customers);
     const removeTasks = (task) => {
-        dispatch(removeTaskAction(task.id))
+        dispatch(removeTaskCreator(task.id))
     }
 
     return (

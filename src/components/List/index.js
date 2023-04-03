@@ -3,13 +3,13 @@ import './List.scss';
 // import Badge from "../Badge";
 import classname from "classname";
 import {GenerateId} from "../../store/helpers/keyHelpera";
-import {removeTaskAction} from "../../store/reducers/TasksReducer";
+import {removeTaskCreator} from "../../store/reducers/TasksReducer";
 import {useDispatch} from "react-redux";
 
 function List({items,active}) {
     const dispatch = useDispatch();
     const removeTasks = (task) => {
-        dispatch(removeTaskAction(task.id))
+        dispatch(removeTaskCreator(task.id))
     }
     return (
         <ul onClick={()=> removeTasks()}   className='list'>
