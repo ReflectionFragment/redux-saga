@@ -13,7 +13,10 @@
   background-color: rgba(38, 46, 47, 0.92);
   box-shadow: 1px 1px 15px #625169;
   font-size: 14px;
-
+.buttons{
+  display: flex;
+  grid-gap: 5px;
+}
   &__sideBar {
     overflow-y: scroll;
     display: flex;
